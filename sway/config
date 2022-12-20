@@ -1,0 +1,27 @@
+include ./input
+include ./display
+include ./workspaces
+include ./resize
+include ./hotkeys
+include ./reboot
+include ./startup
+include ./colors
+include ./apps
+include ./panel
+
+set $refresh_i3status killall -SIGUSR1 i3status
+
+# focus_follows_mouse no
+
+font pango:Consolas for Powerline 10
+
+# Always floating
+for_window [class=".*"] border pixel 2
+for_window [floating] {
+  border normal 0
+}
+
+# Only enable gaps on a workspace when there is at least one container
+smart_gaps on
+smart_borders no_gaps
+gaps inner 10

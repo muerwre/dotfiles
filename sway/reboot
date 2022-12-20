@@ -1,0 +1,21 @@
+set $Locker swaylock-blur --blur-sigma 5
+set $mode_system (l)-ock (e)-xit (R)-eboot (S)-hutdown
+
+# Locker and etc
+mode "$mode_system" {
+    bindsym --to-code {
+        l exec --no-startup-id $Locker, mode "default"
+        e exec --no-startup-id i3-msg exit, mode "default"
+        s exec --no-startup-id systemctl suspend && $Locker, mode "default"
+        # h exec --no-startup-id $Locker & systemctl hibernate, mode "default"
+        Shift+r exec --no-startup-id systemctl reboot, mode "default"
+        Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+        # to normal: Enter or Escape
+        q mode "default"
+        Return mode "default"
+        Escape mode "default"
+    }
+}
+
+bindsym --to-code $mod+Delete mode "$mode_system"

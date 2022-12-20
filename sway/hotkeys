@@ -1,0 +1,92 @@
+bindsym --to-code {
+    # reload the configuration file
+    $mod+Shift+c reload
+    # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+    $mod+Shift+r restart
+    # exit i3 (logs you out of your X session)
+    $mod+Shift+e exec "swaynag -t warning -m 'Exit sway?' -B 'Yes, exit sway' 'swaymsg exit'"
+    # terminal
+    $mod+grave exec i3-sensible-terminal
+    # Use pactl to adjust volume in PulseAudio.
+    XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+    XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+    XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+    XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+    # Brightness
+    XF86MonBrightnessUp exec brightnessctl s 10%+ # increase screen brightness
+    XF86MonBrightnessDown exec brightnessctl s 10%- # decrease screen brightness
+
+    # kill focused window
+    $mod+Shift+q kill
+    Alt+F4 kill
+
+    # start dmenu (a program launcher)
+    # $mod+x exec rofi -show drun
+    $mod+Space exec "wofi --show=drun"
+
+    # change focus
+    $mod+j focus left
+    $mod+k focus down
+    $mod+l focus up
+    $mod+semicolon focus right
+
+    # alternatively, you can use the cursor keys:
+    $mod+Left focus left
+    $mod+Down focus down
+    $mod+Up focus up
+    $mod+Right focus right
+
+    # move focused window
+    $mod+Shift+j move left
+    $mod+Shift+k move down
+    $mod+Shift+l move up
+    $mod+Shift+semicolon move right
+
+    # alternatively, you can use the cursor keys:
+    $mod+Ctrl+Left move left
+    $mod+Ctrl+Down move down
+    $mod+Ctrl+Up move up
+    $mod+Ctrl+Right move right
+
+    $mod+Shift+Up workspace prev
+    $mod+Shift+Down workspace next
+    Ctrl+Alt+Up workspace next
+    Ctrl+Alt+Down workspace prev
+    $mod+button4 workspace next
+
+    # split in horizontal orientation
+    $mod+h split h
+
+    # split in vertical orientation
+    $mod+v split v
+
+    # enter fullscreen mode for the focused container
+     $mod+f fullscreen toggle
+
+    # change container layout (stacked, tabbed, toggle split)
+    # $mod+s layout stacking
+     $mod+w layout tabbed
+     $mod+e layout toggle split
+
+    # toggle tiling / floating
+     $mod+Return floating toggle
+
+    # change focus between tiling / floating windows
+    $mod+shift+space focus mode_toggle
+
+    # focus the parent container
+    $mod+a focus parent
+
+    # screenshots
+    --release Print exec swayshot region
+
+    # player
+    $mod+c exec playerctl -a play-pause
+    $mod+b exec playerctl -a next
+    $mod+z exec playerctl -a previous
+    $mod+x exec playerctl -a play-pause
+    XF86AudioPlay exec playerctl -a play-pause
+    XF86AudioPause exec playerctl -a play-pause
+    XF86AudioNext exec playerctl -a next
+}

@@ -1,0 +1,15 @@
+# fractional scaling
+set $scale 1.2
+
+output eDP-1 resolution 1920x1080 position 0,0 scale $scale
+# output HDMI-A-1 resolution 1920x1080 position 0,0
+
+# workspace <-> display mapping
+
+# workspace $ws1 output HDMI-A-1 eDP-1
+# workspace $ws2 output HDMI-A-1 eDP-1
+# workspace $ws3 output eDP-1
+# workspace $ws4 output HDMI-A-1
+# workspace $ws5 output eDP-1 HMDI-A-1
+# workspace $ws6 output eDP-1 HDMI-A-1
+

@@ -1,0 +1,1 @@
+swaymsg -t get_inputs -r | jq '.[] | (select(.identifier == "1:1:AT_Translated_Set_2_keyboard")).xkb_active_layout_name' | sed 's/"Russian"$/{ "text": " RU", "class": "warn" }/; s/"English\s(US)"/{ "text": " US" }/'

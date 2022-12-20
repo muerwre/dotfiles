@@ -1,0 +1,14 @@
+# Transparency
+exec_always --no-startup-id hsetroot -solid "#222222" 
+
+set $primary #2E303E
+set $inactive #1C1E26
+
+# black-and-white
+client.background         #ff0000 #ff0000 #ff0000
+client.focused            $primary $primary #ffffff $inactive
+client.unfocused          $inactive $inactive #999999 #444444 #222222
+client.focused_inactive   #444444 #444444 #999999 #444444 #222222
+
+# Wallpaper
+output "*" bg ~/wallpaper.png fill

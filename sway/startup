@@ -1,0 +1,9 @@
+# fix slow GTK app startup
+exec "systemctl --user import-environment SWAYSOCK WAYLAND_DISPLAY"
+
+# network manager
+exec --no-startup-id nm-applet
+exec --no-startup-id mako
+# fix gksu
+# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
+# exec --no-startup-id eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)

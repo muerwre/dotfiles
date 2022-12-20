@@ -1,0 +1,8 @@
+# Assign workspaces to apps
+assign [class="Google-chrome"] $ws1
+assign [class="firefox"] $ws2
+assign [class="Slack"] $ws3
+assign [class="Gnome-terminal"] $ws4
+assign [class="code-oss"] $ws2
+assign [class="code"] $ws2
+assign [class="TelegramDesktop"] $ws3

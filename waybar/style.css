@@ -1,0 +1,227 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: DejaVu Sans Mono for Powerline, Font Awesome;
+    min-height: 0;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: rgba(32, 30, 49, 0.69);
+    color: #ffffff;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#window {
+    color: rgba(255,255,255,0.4);
+    padding-left: 15px;
+}
+
+#workspaces {
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(0,0,0,0.05);
+}
+
+#workspaces button {
+    padding: 0 10px;
+    color: rgba(255,255,255,0.3);
+    margin: 0;
+}
+
+#workspaces button.focused {
+    color: #fdbc66;
+    font-weight: 900;
+}
+
+#workspaces button:hover {
+    color: #ffffff;
+}
+
+#workspaces button.urgent {
+    color: #ff3344;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#custom-cpu {
+    padding: 0;
+    margin: 0;
+    color: rgba(255,255,255,0.4);
+}
+
+#mode {
+    background-color: orange;
+    padding: 0 10px;
+    color: black;
+    border-radius: 4px;
+    margin: 10px 0 10px 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#clock {
+    color: white;
+    font-weight: 900;
+    font-size: 13px;
+    background-color: rgba(255,255,255,0.05);
+    padding: 0 20px;
+    margin-left: 10px;
+}
+
+#battery {
+}
+
+
+#battery.warning {
+    color: orange;
+}
+
+#battery.critical {
+    color: #ff3344;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    color: #ff3344;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.charging {
+    color: #009988;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#memory.critical {
+    color: #ff3344;
+}
+
+#memory.warning {
+    color: orange;
+}
+
+#backlight {
+}
+
+#network {
+}
+
+#network.disconnected {
+}
+
+#pulseaudio {
+}
+
+#pulseaudio.muted {
+    color: #ff3344;
+}
+
+#custom-media {
+    background-color: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa000;
+}
+
+#temperature {
+    background-color: #f0932b;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+#tray {
+    padding-right: 10px;
+    background-color: rgba(255,255,255,0.05);
+}
+
+#idle_inhibitor {
+    background-color: #2d3436;
+}
+
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
+}
+
+#mpd {
+    background-color: #66cc99;
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}
+
+#custom-layout {
+    padding: 0 10px;
+    margin: 5px 0 5px;
+    border-radius: 4px;
+}
+
+#custom-layout.warn {
+    background-color: #f6b758;
+    color: #333333;
+}
+
+
+#custom-separator {
+    color: #444444;
+    padding: 0 10px;
+}
+
+#custom-cpu {}
+
+#custom-player {
+    font-size: 15px;
+    color: #777777;
+    margin-left: 40px;
+}

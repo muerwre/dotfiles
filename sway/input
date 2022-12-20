@@ -1,0 +1,30 @@
+set $mod Mod4
+
+# Keyboard switching
+exec_always setxkbmap -layout us,ru
+exec_always setxkbmap -option 'grp:caps_toggle'
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Gestures
+exec libinput-gestures-setup autostart
+exec libinput-gestures-setup start
+
+# Touchpad
+input * {
+    tap enabled
+    natural_scroll enabled
+    scroll_factor 0.5
+    xkb_layout "us,ru"
+    xkb_options "grp:caps_toggle"
+}
+
+# Focus, idk
+mouse_warping container
+focus_wrapping no
+
+# Reload waybar
+bindsym {
+    ISO_Next_Group exec --no-startup-id pkill -RTMIN+8 waybar
+}

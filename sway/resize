@@ -1,0 +1,22 @@
+# resize window (you can also use the mouse for that)
+mode "resize" {
+    bindsym --to-code {
+        j resize shrink width 10 px or 10 ppt
+        k resize grow height 10 px or 10 ppt
+        l resize shrink height 10 px or 10 ppt
+        semicolon resize grow width 10 px or 10 ppt
+
+        Left resize shrink width 10 px or 10 ppt
+        Down resize grow height 10 px or 10 ppt
+        Up resize shrink height 10 px or 10 ppt
+        Right resize grow width 10 px or 10 ppt
+
+        Return mode "default"
+        Escape mode "default"
+        $mod+r mode "default"
+    }
+}
+
+# resize mode
+bindsym $mod+r mode "resize"
+    

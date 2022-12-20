@@ -1,0 +1,12 @@
+dynamic_lines=true
+style=.config/wofi/styles.css
+color=.config/wofi/colors
+prompt=
+allow_images=true
+insensitive=true
+no_actions=true
+location=center
+lines=3
+hide_scroll=true
+gtk_dark=true
+width=40%
