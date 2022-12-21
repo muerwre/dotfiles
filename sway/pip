@@ -1,0 +1,9 @@
+for_window [title="Picture-in-Picture"] {
+  floating enable
+  resize set height 280
+  resize set width  500
+  border none
+  sticky toggle
+  move position 1420 800
+  opacity 0.7
+}
