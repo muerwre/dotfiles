@@ -25,6 +25,7 @@ if type brew &> /dev/null; then
 else
   # asdf is faster alternative to nvm
   # and can be used to install golang, nodejs, python
+  echo "WOOOOOOT"
   . $HOME/.asdf/asdf.sh
 
   # use wayland backend for firefox

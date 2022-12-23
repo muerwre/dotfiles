@@ -8,4 +8,3 @@
 
 . env.sh
 . appearance.sh
-. asdf.sh

@@ -9,14 +9,16 @@ if [ ! -d "$HOME/.zsh" ]; then
   mkdir -p "$HOME/.zsh"
 fi
 
+# init oh-my-zsh
 if [[ -f "$ZSH/oh-my-zsh.sh" ]]; then
   source $ZSH/oh-my-zsh.sh
 else 
   echo "[install]\toh-my-zsh:\tsh -c \"\$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
 fi
 
+# init pure prompt
 if [ -d "$HOME/.zsh/pure" ]; then
-  fpath+=$HOME/.zsh/pure
+  FPATH=$HOME/.zsh/pure:$FPATH
   autoload -U promptinit
   promptinit
   prompt pure
@@ -25,9 +27,11 @@ else
 fi
 
 # init autocompletions
-if type brew &> /dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+if [ -d "$HOME/.zsh/autocomplete" ]; then
+  FPATH=$HOME/.zsh/autocomplete:$FPATH
 
   autoload -Uz compinit
   compinit
+else
+  echo "[install]\tgit clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git \"$HOME/.zsh/autocomplete\""
 fi
