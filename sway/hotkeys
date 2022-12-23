@@ -37,6 +37,8 @@ bindsym --to-code {
     $mod+Up focus up
     $mod+Right focus right
 
+    $mod+Tab workspace back_and_forth
+
     # move focused window
     $mod+Shift+j move left
     $mod+Shift+k move down
