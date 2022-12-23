@@ -2,7 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 DISABLE_AUTO_UPDATE="true"
 ZSH_THEME="robbyrussell"
-plugins=(git zsh-autosuggestions zsh-completions zsh-syntax-highlighting rsync)
+plugins=(git rsync adb)
 
 if [ ! -d "$HOME/.zsh" ]; then
   echo "[init]\tcreated $HOME/.zsh"
@@ -26,12 +26,16 @@ else
   echo "[install]\tprompt:\tgit clone https://github.com/sindresorhus/pure.git \"$HOME/.zsh/pure\""
 fi
 
-# init autocompletions
-if [ -d "$HOME/.zsh/autocomplete" ]; then
-  FPATH=$HOME/.zsh/autocomplete:$FPATH
-
-  autoload -Uz compinit
-  compinit
+# autocomplete from history
+if [ -d "$HOME/.zsh/zsh-autosuggestions" ]; then
+  source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 else
-  echo "[install]\tgit clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git \"$HOME/.zsh/autocomplete\""
+  echo "[install]\tgit clone https://github.com/zsh-users/zsh-autosuggestions.git \"$HOME/.zsh/zsh-autosuggestions\""
+fi
+
+# colorful input
+if [ -d "$HOME/.zsh/zsh-syntax-highlighting" ]; then
+  source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+else
+  echo "[install]\tgit clone https://github.com/zsh-users/zsh-syntax-highlighting.git \"$HOME/.zsh/zsh-syntax-highlighting\""
 fi
