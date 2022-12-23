@@ -22,4 +22,11 @@ if type brew &> /dev/null; then
   # [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   # [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
   # [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
+else
+  # asdf is faster alternative to nvm
+  # and can be used to install golang, nodejs, python
+  . $HOME/.asdf/asdf.sh
+
+  # use wayland backend for firefox
+  export MOZ_ENABLE_WAYLAND=1
 fi
