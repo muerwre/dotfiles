@@ -8,11 +8,11 @@
         // "custom/separator", 
         // "custom/cpu",
         // "custom/separator", 
+        "battery", 
         "memory", 
         // "custom/separator", 
         "pulseaudio", 
         // "custom/separator",
-        // "battery", 
         // "custom/separator", 
         // "network", 
         // "custom/separator", 
@@ -44,8 +44,7 @@
     },
     "clock": {
         "tooltip-format": "{:%Y-%m-%d | %H:%M}",
-        "format-alt": "{:%Y-%m-%d}",
-        "tooltip": false
+        "tooltip": true
     },
     "cpu": {
         "format": "{usage}% ",
