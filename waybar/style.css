@@ -60,7 +60,7 @@ window#waybar.hidden {
 #custom-layout,
 #custom-cpu {
     padding: 0;
-    margin: 0 10px;
+    margin: 0 8px;
     color: rgba(255,255,255,1);
     padding-top: 2px;
 }
