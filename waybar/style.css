@@ -203,6 +203,7 @@ label:focus {
     border: 1px solid white;
     color: #fff;
     font-size: 0.9em;
+    font-family: monospace;
 }
 
 #custom-layout.warn {
