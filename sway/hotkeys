@@ -23,7 +23,7 @@ bindsym --to-code {
 
     # start dmenu (a program launcher)
     # $mod+x exec rofi -show drun
-    $mod+Space exec "wofi --show=drun"
+    $mod+Space exec "wofi --show=drun -H100 -W400 -f -k /tmp/1"
 
     # change focus
     $mod+j focus left

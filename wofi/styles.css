@@ -17,8 +17,8 @@
   color: white;
   margin: 3px;
   padding: 8px;
-  outline: 0px solid none;
-  border: 0px solid none;
+  outline: 0px solid transparent;
+  border: 0px solid transparent;
   box-shadow: none;
 }
 
@@ -41,15 +41,15 @@
 }
 
 #entry:selected {
-  color: white;
+  color: #ffffff;
   font-weight: bold;
-  background-color: rgba(--wofi-rgb-color0, 0);
+  background-color: transparent;
   border: none;
   outline: none;
 }
 
 #text:selected {
-  color: white;
+  color: #ffffff;
 }
 
 #img {
