@@ -9,16 +9,16 @@
         // "custom/cpu",
         // "custom/separator", 
         "memory", 
-        "custom/separator", 
+        // "custom/separator", 
         "pulseaudio", 
         // "custom/separator",
         // "battery", 
         // "custom/separator", 
         // "network", 
-        "custom/separator", 
+        // "custom/separator", 
         "custom/layout", 
-        "clock", 
-        "tray"
+        "tray",
+        "clock"
     ],
     // Modules configuration
     "sway/workspaces": {
@@ -117,7 +117,7 @@
         "return-type": "json"
     },
     "custom/separator": {
-        "format": "-",
+        "format": " ",
         "interval": "once",
         "tooltip": false
     }
