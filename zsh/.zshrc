@@ -3,8 +3,10 @@
 # 1. symlink whole dir to $HOME/.zsh/config
 # 2. add next line to $HOME/.zshrc
 #
-#     PATH="$HOME/.zsh/config/:$PATH" . ".zshrc"
+#     source "$HOME/.zsh/config/.zshrc"
 #
 
-. env.sh
-. appearance.sh
+pwd=$(dirname $0)
+
+. "$pwd/env.sh"
+. "$pwd/appearance.sh"
