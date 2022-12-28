@@ -39,3 +39,19 @@ if [ -d "$HOME/.zsh/zsh-syntax-highlighting" ]; then
 else
   echo "[install]\tgit clone https://github.com/zsh-users/zsh-syntax-highlighting.git \"$HOME/.zsh/zsh-syntax-highlighting\""
 fi
+
+# fuzzy search
+if [ -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-zsh-plugin" ]; then
+  if [ ! -f "$HOME/.fzf.zsh" ]; then
+    if type brew &> /dev/null; then
+      $(brew --prefix)/opt/fzf/install --all
+    else
+      echo "[warning] IDK install fzf somehow"
+      # do the same for linux
+    fi
+  fi
+
+  plugins=($plugins fzf-zsh-plugin)
+else
+  echo "[install]\tgit clone https://github.com/unixorn/fzf-zsh-plugin.git  \"${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-zsh-plugin\""
+fi
