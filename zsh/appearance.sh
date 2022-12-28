@@ -2,7 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 DISABLE_AUTO_UPDATE="true"
 ZSH_THEME="robbyrussell"
-plugins=(git rsync adb)
+plugins=(git rsync asdf yarn)
 
 if [ ! -d "$HOME/.zsh" ]; then
   echo "[init]\tcreated $HOME/.zsh"
