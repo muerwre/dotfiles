@@ -1,0 +1,26 @@
+[user]
+	name = Fedor Katurov
+	email = gotham48@gmail.com
+[alias]
+	flush = git clean-branches branch | grep -v master | xargs git branch -D
+	lol = log --oneline --graph
+	l = lol
+	c = commit -am 
+	cv = commit --no-verify -am
+	p = push
+	pf = p --force-with-lease
+	s = status
+	ignore-now = update-index --skip-worktree
+	co = checkout
+	fuck = commit --amend
+	oops = fuck
+	forgot = oops
+	amend = oops
+	am = oops
+	cob = checkout -b
+	rmb = branch -D 
+	pu = !git push --set-upstream origin HEAD
+[url "https://github.com"]
+	insteadOf = git://github.com
+[pull]
+	rebase = true
