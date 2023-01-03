@@ -20,7 +20,9 @@
 	cob = checkout -b
 	rmb = branch -D 
 	pu = !git push --set-upstream origin HEAD
-[url "https://github.com"]
-	insteadOf = git://github.com
+#[url "https://github.com"]
+#	insteadOf = git://github.com
 [pull]
 	rebase = true
+[includeIf "gitdir:~/Projects/rogii/"]
+    path = ~/Projects/rogii/.gitconfig
