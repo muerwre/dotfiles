@@ -1,7 +1,7 @@
 # fractional scaling
-set $scale 1.2
+set $scale 2
 
-output eDP-1 resolution 1920x1080 position 0,0 scale $scale
+output eDP-1 resolution 2880x1600 position 0,0 scale $scale
 # output HDMI-A-1 resolution 1920x1080 position 0,0
 
 # workspace <-> display mapping
@@ -13,3 +13,7 @@ output eDP-1 resolution 1920x1080 position 0,0 scale $scale
 # workspace $ws5 output eDP-1 HMDI-A-1
 # workspace $ws6 output eDP-1 HDMI-A-1
 
+output * adaptive_sync on
+output * max_render_time 16
+output * subpixel none
+output * render_bit_depth 10
