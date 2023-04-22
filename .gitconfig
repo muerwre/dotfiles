@@ -2,7 +2,7 @@
 	name = Fedor Katurov
 	email = gotham48@gmail.com
 [alias]
-	flush = git clean-branches branch | grep -v master | xargs git branch -D
+	flush = !git branch | grep -v "master" | grep -v "develop" | grep -v "main" | xargs git branch -D
 	lol = log --oneline --graph
 	l = lol
 	c = commit -am 
@@ -26,3 +26,8 @@
 	rebase = true
 [includeIf "gitdir:~/Projects/rogii/"]
     path = ~/Projects/rogii/.gitconfig
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

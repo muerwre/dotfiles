@@ -11,4 +11,4 @@ client.unfocused          $inactive $inactive #999999 #444444 #222222
 client.focused_inactive   #444444 #444444 #999999 #444444 #222222
 
 # Wallpaper
-output "*" bg ~/wallpaper.png fill
+# output "*" bg ~/wallpaper.png fill

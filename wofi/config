@@ -9,5 +9,5 @@ location=center
 lines=16
 hide_scroll=true
 gtk_dark=true
-width=600
+width=500
 image_size=20

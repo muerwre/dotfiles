@@ -1,0 +1,5 @@
+#!/bin/bash
+# 
+# Shows swap usage by each app, sorted descending
+#
+for file in /proc/*/status ; do awk '/VmSwap|Name/{printf $2 " " $3}END{ print ""}' $file; done | sort -k 2 -n -r | less

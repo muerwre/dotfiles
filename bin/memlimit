@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# runs app with a memory limit
+#
+# for example: 
+#
+# 	memlimit firefox 2G 	- will run firefox with memory limit of 2 Gb
+#	memlimit yarn		- will run yarn with memory limit of 1 Gb, which is default
+
+systemd-run --scope -p MemoryLimit=${2:-1G} $1

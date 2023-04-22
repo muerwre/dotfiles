@@ -19,6 +19,7 @@ bindsym --to-code {
 
     # kill focused window
     $mod+Shift+q kill
+    $mod+q kill
     Alt+F4 kill
 
     # start dmenu (a program launcher)

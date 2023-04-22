@@ -1,123 +1,130 @@
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 32, // Waybar height (to be removed for auto height)
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
-    "modules-right": [ 
-        // "custom/player",
-        // "custom/separator", 
-        // "custom/cpu",
-        // "custom/separator", 
-        "battery", 
-        "memory", 
-        // "custom/separator", 
-        "pulseaudio", 
-        // "custom/separator",
-        // "custom/separator", 
-        // "network", 
-        // "custom/separator", 
-        "custom/layout", 
-        "tray",
-        "clock"
-    ],
-    // Modules configuration
-    "sway/workspaces": {
-         "disable-scroll": true,
-         "all-outputs": true,
-         "format": "{icon}",
-         "format-icons": {
-             "4": "4",
-             "1": "1",
-             "2": "2",
-             "5": "5",
-             "3": "3",
-             "default": "○"
-         }
-    },
-    "sway/mode": {
-        "format": "{}",
-        "max-length": 100
-    },
-    "tray": {
-        "icon-size": 16,
-        "spacing": 10
-    },
-    "clock": {
-        "tooltip-format": "{:%Y-%m-%d | %H:%M}",
-        "tooltip": true
-    },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{used:0.1f}G",
-        "tooltip": false,
-	"states": {
-	    "ok": 59,
-    	    "warning": 60,
-    	    "critical": 80
-	}
-    },
-    "battery": {
-        "states": {
-            "warning": 40,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""],
-        "tooltip": false
-    },
-    "network": {
-        "format-wifi": "",
-        "format-alt": "{essid}",
-        "tooltip": false
-    },
-    "pulseaudio": {
-        "scroll-step": 0.5, // %, can be a float
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} {volume}%",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphones": "",
-            "handsfree": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-    "custom/layout": {
-        "format": "{}",
-        "escape": true,
-        "exec": "$HOME/.config/waybar/blocks/layouts.sh",
-        "return-type": "json",
-        "signal": 8,
-        "interval": "once"
-    },
-    // "custom/cpu": {
-    //     "format": "{}",
-    //     "escape": true,
-    //     "exec": "$HOME/.config/i3blocks/blocks/cpu_json",
-    //     "return-type": "json",
-    //     "interval": 5
-    // },
-    "custom/player": {
-        "format": "{icon} {}",
-        "exec": "$HOME/.config/i3blocks/blocks/player",
-        "return-type": "json"
-    },
-    "custom/separator": {
-        "format": " ",
-        "interval": "once",
-        "tooltip": false
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "modules-left": [
+    "sway/workspaces",
+    "sway/mode",
+    "sway/window"
+  ],
+  "modules-right": [
+    "custom/player",
+    "custom/cpu",
+    "battery",
+    "memory",
+    "pulseaudio",
+    "network",
+    "custom/layout",
+    "tray",
+    "clock"
+  ],
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "4": "4",
+      "1": "1",
+      "2": "2",
+      "5": "5",
+      "3": "3",
+      "default": "○"
     }
+  },
+  "sway/mode": {
+    "format": "{}",
+    "max-length": 100
+  },
+  "tray": {
+    "icon-size": 24,
+    "spacing": 10
+  },
+  "clock": {
+    "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+    "tooltip": true
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "{used:0.1f}G",
+    "tooltip": false,
+    "states": {
+      "ok": 59,
+      "warning": 60,
+      "critical": 80
+    }
+  },
+  "battery": {
+    "states": {
+      "warning": 40,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tooltip": false
+  },
+  "network": {
+    "format-wifi": "🥑 {essid}",
+    "tooltip": "{essid}",
+    "on-click": "nm-connection-editor"
+  },
+  "pulseaudio": {
+    "scroll-step": 0.5,
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "custom/layout": {
+    "format": "{}",
+    "escape": true,
+    "exec": "$HOME/.config/waybar/blocks/layouts.sh",
+    "return-type": "json",
+    "signal": 8,
+    "interval": "once"
+  },
+  "custom/cpu": {
+    "format": "{}",
+    "escape": true,
+    "exec": "$HOME/.config/i3blocks/blocks/cpu_json",
+    "return-type": "json",
+    "interval": 5
+  },
+  "custom/player": {
+    "format": "{icon} {}",
+    "exec": "$HOME/.config/i3blocks/blocks/player",
+    "return-type": "json"
+  },
+  "custom/separator": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false
+  }
 }
