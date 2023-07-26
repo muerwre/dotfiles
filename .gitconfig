@@ -10,7 +10,8 @@
 	p = push
 	pf = p --force-with-lease
 	s = status
-	ignore-now = update-index --skip-worktree
+	ignore = update-index --skip-worktree
+	unignore = update-index --no-skip-worktree
 	co = checkout
 	fuck = commit --amend
 	oops = fuck
@@ -20,6 +21,8 @@
 	cob = checkout -b
 	rmb = branch -D 
 	pu = !git push --set-upstream origin HEAD
+	hide = ignore
+	show = unignore
 #[url "https://github.com"]
 #	insteadOf = git://github.com
 [pull]

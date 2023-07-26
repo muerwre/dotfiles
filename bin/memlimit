@@ -1,10 +1,21 @@
 #!/bin/bash
 #
-# runs app with a memory limit
+# runs app with a memory and CPU limit
 #
 # for example: 
 #
+# 	memlimit firefox 2G 50	- will run firefox with memory limit of 2 Gb and CPU quota 50%
 # 	memlimit firefox 2G 	- will run firefox with memory limit of 2 Gb
-#	memlimit yarn		- will run yarn with memory limit of 1 Gb, which is default
+#	memlimit firefox	- will run yarn with memory limit of 1 Gb, which is default and no CPU quota
 
-systemd-run --scope -p MemoryLimit=${2:-1G} $1
+MEM_LIMIT=${2:-1G}
+CPU_QUOTA=$3
+
+if [ -z "$3" ] 
+    then
+    echo "running with a limit of $MEM_LIMIT"
+    systemd-run --scope -p MemoryHigh=$MEM_LIMIT -p MemorySwapMax=$MEM_LIMIT $1
+else
+    echo "running with a limit of $MEM_LIMIT and CPU quota of $CPU_QUOTA%"
+    systemd-run --scope -p MemoryHigh=$MEM_LIMIT -p MemorySwapMax=$MEM_LIMIT -p CPUQuota=$CPU_QUOTA% $1
+fi

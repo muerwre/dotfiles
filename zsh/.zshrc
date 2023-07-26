@@ -10,3 +10,4 @@ pwd=$(dirname $0)
 
 . "$pwd/env.sh"
 . "$pwd/appearance.sh"
+. "$pwd/alias.sh"
