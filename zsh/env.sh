@@ -27,6 +27,6 @@ else
   # and can be used to install golang, nodejs, python
   . /opt/asdf-vm/asdf.sh
 
-  # use wayland backend for firefox
-  export MOZ_ENABLE_WAYLAND=1
+  # fokkin node requires it sometimes. hate-hate-hate
+  export NODE_OPTIONS="--max_old_space_size=4096"
 fi
