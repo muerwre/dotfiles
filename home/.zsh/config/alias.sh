@@ -1,0 +1,5 @@
+alias -g yarnlink="ls -l node_modules | grep ^l"
+alias fuck="git fuck --no-verify"
+alias cob="git cob"
+alias co="git co"
+alias pull="git pull"

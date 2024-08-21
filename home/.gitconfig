@@ -1,0 +1,36 @@
+[user]
+	name = Fedor Katurov
+	email = gotham48@gmail.com
+[alias]
+	flush = !git branch | grep -v "master" | grep -v "develop" | grep -v "main" | xargs git branch -D
+	lol = log --oneline --graph
+	l = lol
+	c = commit -am 
+	cv = commit --no-verify -am
+	p = push
+	pf = p --force-with-lease
+	s = status
+	ignore = update-index --skip-worktree
+	unignore = update-index --no-skip-worktree
+	co = checkout
+	fuck = commit --amend
+	oops = fuck
+	forgot = oops
+	amend = oops
+	am = oops
+	cob = checkout -b
+	rmb = branch -D 
+	pu = !git push --set-upstream origin HEAD
+	hide = ignore
+	show = unignore
+#[url "https://github.com"]
+#	insteadOf = git://github.com
+[pull]
+	rebase = true
+[includeIf "gitdir:~/Projects/rogii/"]
+    path = ~/Projects/rogii/.gitconfig
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

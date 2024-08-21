@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Finds specific text in my work project folder, searching in .ts and .tsx files
+# I use it to search feature flags when I want to remove them
+
+find "/home/muerwre/Projects/rogii" -type f -name "*.ts*" -execdir grep -nH --color=auto "$1" {} ';'

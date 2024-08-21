@@ -11,3 +11,4 @@ hide_scroll=true
 gtk_dark=true
 width=500
 image_size=20
+matching=fuzzy

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Requires JIRA_TOKEN to be defined in env
+# Loads current user's current task
+
+curl 	--request GET \
+	--url "https://$JIRA_HOST/rest/api/2/search?jql=assignee%3DcurrentUser%28%29%20and%20status%3D%22In%20Progress%22" \
+	--user "$JIRA_EMAIL:$JIRA_TOKEN" \
+	--header 'Accept: application/json' \
+	--silent \
+	| jq "if .issues[0] then \"\" + .issues[0].key + \": \" + .issues[0].fields.summary[:64] else \"// no issues in progress\" end" \
+	| tr -d '"'
